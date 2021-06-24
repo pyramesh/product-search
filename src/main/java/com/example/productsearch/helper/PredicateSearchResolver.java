@@ -16,12 +16,12 @@ import java.util.function.Predicate;
 @Component
 @Slf4j
 public class PredicateSearchResolver {
-    Predicate<MobileHandSet> predicate= null;
-    List<Predicate<MobileHandSet>> predicates = new ArrayList<>();
 
     public List<Predicate<MobileHandSet>> resolve(SearchCriteriaMobileHandset searchHandSetCriteria){
-
         log.info("start PredicateSearchResolver :: resolve ");
+
+        Predicate<MobileHandSet> predicate;
+        List<Predicate<MobileHandSet>> predicates = new ArrayList<>();
 
         if (null != searchHandSetCriteria.getPriceEur() || null != searchHandSetCriteria.getPrice()) {
             predicate= h -> h.getRelease().getPriceEur() .equals(null != searchHandSetCriteria.getPriceEur() ? searchHandSetCriteria.getPriceEur(): searchHandSetCriteria.getPrice());
@@ -32,44 +32,44 @@ public class PredicateSearchResolver {
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getAnnounceDate()) {
-            predicate= h -> null != h.getRelease() && h.getRelease().getAnnounceDate().equalsIgnoreCase(searchHandSetCriteria.getAnnounceDate());
+            predicate= h -> null != h.getRelease() && h.getRelease().getAnnounceDate().contains(searchHandSetCriteria.getAnnounceDate());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getBattery()) {
-            predicate= h -> null != h.getHardware() && h.getHardware().getBattery().equalsIgnoreCase(searchHandSetCriteria.getBattery());
+            predicate= h -> null != h.getHardware() && h.getHardware().getBattery().contains(searchHandSetCriteria.getBattery());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getGps()) {
-            predicate= h -> null != h.getHardware() && h.getHardware().getGps().equalsIgnoreCase(searchHandSetCriteria.getGps());
+            predicate= h -> null != h.getHardware() && h.getHardware().getGps().contains(searchHandSetCriteria.getGps());
             predicates.add(predicate);
         }
 
         if (null != searchHandSetCriteria.getAudioJack()) {
-            predicate= h -> null != h.getHardware() && h.getHardware().getAudioJack().equalsIgnoreCase(searchHandSetCriteria.getAudioJack());
+            predicate= h -> null != h.getHardware() && h.getHardware().getAudioJack().contains(searchHandSetCriteria.getAudioJack());
             predicates.add(predicate);
         }
 
         if (null != searchHandSetCriteria.getBrand()) {
-            predicate= h -> null != h && h.getBrand().equalsIgnoreCase(searchHandSetCriteria.getBrand());
+            predicate= h -> null != h && h.getBrand().contains(searchHandSetCriteria.getBrand());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getPhone()) {
-            predicate= h -> null != h && h.getPhone().equalsIgnoreCase(searchHandSetCriteria.getPhone());
+            predicate= h -> null != h && h.getPhone().contains(searchHandSetCriteria.getPhone());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getResolution()) {
-            predicate= h -> null != h && h.getResolution().equalsIgnoreCase(searchHandSetCriteria.getResolution());
+            predicate= h -> null != h && h.getResolution().contentEquals(searchHandSetCriteria.getResolution());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getPicture()) {
-            predicate= h -> null != h && h.getPicture().equalsIgnoreCase(searchHandSetCriteria.getPicture());
+            predicate= h -> null != h && h.getPicture().contentEquals(searchHandSetCriteria.getPicture());
             predicates.add(predicate);
         }
-        if (0 != searchHandSetCriteria.getId()) {
+        if (null != searchHandSetCriteria.getId()) {
             predicate= h -> null != h && h.getId() == searchHandSetCriteria.getId();
             predicates.add(predicate);
         }
-        log.info("start PredicateSearchResolver :: resolve ");
+        log.info("end PredicateSearchResolver :: resolve  with predicates ={}",predicates);
         return predicates;
     }
 }

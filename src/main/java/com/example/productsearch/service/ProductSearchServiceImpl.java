@@ -4,7 +4,6 @@ import com.example.productsearch.dto.MobileHandSet;
 import com.example.productsearch.dto.SearchCriteriaMobileHandset;
 import com.example.productsearch.external.ExternalServiceFacade;
 import com.example.productsearch.helper.PredicateSearchResolver;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +15,16 @@ import java.util.stream.Collectors;
  * @author Ramesh.Yaleru on 6/24/2021
  */
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class ProductSearchServiceImpl  implements ProductSearchService{
 
-    private PredicateSearchResolver predicateSearchResolver;
+    private final PredicateSearchResolver predicateSearchResolver;
+    private final ExternalServiceFacade externalServiceFacade;
 
-    private ExternalServiceFacade externalServiceFacade;
+    ProductSearchServiceImpl(PredicateSearchResolver predicateSearchResolver, ExternalServiceFacade externalServiceFacade){
+        this.predicateSearchResolver = predicateSearchResolver;
+        this.externalServiceFacade = externalServiceFacade;
+    }
 
     @Override
     public List<MobileHandSet> search(SearchCriteriaMobileHandset searchCriteria) {

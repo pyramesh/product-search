@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MobileHandSet implements Serializable {
-    private long id;
+    private Long id;
     private String brand;
     private String phone;
     private String picture;
@@ -22,7 +22,6 @@ public class MobileHandSet implements Serializable {
     private String resolution;
     private Hardware hardware;
     private Release release;
-    private String announceDate;
-    private Integer priceEur;
+
 }
 
