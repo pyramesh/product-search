@@ -47,15 +47,15 @@ Assumption and design decissions
 How to run application
 -----------------------------------
     1. Execute the below command in the project root directory(product-search)
-        '**mvn clean install**'
+        **mvn clean install**
     2. Result of the above command,can observe the below on the console
         a. test cases:
-            '**[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0**'
+            **[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0**
 
         b. jar file will be generated in the below path
             '\product-search\target\product-search-0.0.1-SNAPSHOT.jar'
     3. Execute the below command to start the application in the path (product-search/target)
-            '**java -jar product-search-0.0.1-SNAPSHOT.jar**'
+            **java -jar product-search-0.0.1-SNAPSHOT.jar**
 
     4. Result of the above command (D:\product-search\target>java -jar product-search-0.0.1-SNAPSHOT.jar)
 
