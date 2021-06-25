@@ -15,7 +15,7 @@ import java.util.List;
  * @author Ramesh.Yaleru on 6/24/2021
  */
 
-@FeignClient(value = "product-search", url = "${mobile.handset.service.endpoint.base.url}")
+@FeignClient(value = "mobile-handset-service", url = "${mobile.handset.service.endpoint.base.url}")
 @Component
 public interface ProductSearchFeignClient {
 

@@ -1,6 +1,7 @@
 package com.example.productsearch;
 
 import com.example.productsearch.dto.MobileHandSet;
+import com.example.productsearch.dto.SearchResponse;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -42,10 +43,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(10).isEqualTo(handSets.size());
+        assertThat(10).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -57,10 +58,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(18).isEqualTo(handSets.size());
+        assertThat(18).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -73,10 +74,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(2).isEqualTo(handSets.size());
+        assertThat(2).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -88,10 +89,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(65).isEqualTo(handSets.size());
+        assertThat(65).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -103,10 +104,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(19).isEqualTo(handSets.size());
+        assertThat(19).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -118,10 +119,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(36).isEqualTo(handSets.size());
+        assertThat(36).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -133,10 +134,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(69).isEqualTo(handSets.size());
+        assertThat(69).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -148,10 +149,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
-        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(0).isEqualTo(handSets.size());
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.NOT_FOUND.value());
+        assertThat(0).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -163,10 +164,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(1).isEqualTo(handSets.size());
+        assertThat(1).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -178,10 +179,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
-        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(0).isEqualTo(handSets.size());
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.NOT_FOUND.value());
+        assertThat(0).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -193,10 +194,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(4).isEqualTo(handSets.size());
+        assertThat(4).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -208,10 +209,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
-        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(0).isEqualTo(handSets.size());
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.NOT_FOUND.value());
+        assertThat(0).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -223,10 +224,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(4).isEqualTo(handSets.size());
+        assertThat(4).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -238,10 +239,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(22).isEqualTo(handSets.size());
+        assertThat(22).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -253,10 +254,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(1).isEqualTo(handSets.size());
+        assertThat(1).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -268,10 +269,10 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(12).isEqualTo(handSets.size());
+        assertThat(12).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 
     @Test
@@ -283,9 +284,9 @@ public class ProductQueryControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 
-        List<MobileHandSet> handSets = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
+        SearchResponse searchResponse = objectMapper.readValue(response.getContentAsString(), new TypeReference<>() {});
         // then
-        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        assertThat(0).isEqualTo(handSets.size());
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.NOT_FOUND.value());
+        assertThat(0).isEqualTo(searchResponse.getMobileHandSets().size());
     }
 }

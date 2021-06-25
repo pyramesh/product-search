@@ -2,6 +2,7 @@ package com.example.productsearch.controller;
 
 import com.example.productsearch.dto.MobileHandSet;
 import com.example.productsearch.dto.SearchCriteriaMobileHandset;
+import com.example.productsearch.dto.SearchResponse;
 import com.example.productsearch.service.ProductSearchService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Ramesh.Yaleru on 6/24/2021
@@ -28,7 +30,7 @@ public class ProductQueryController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<MobileHandSet>> search(@RequestParam(required = false) Integer priceEur,
+    public ResponseEntity<?> search(@RequestParam(required = false) Integer priceEur,
                                                              @RequestParam(required = false) String sim,
                                                              @RequestParam(required = false) String announceDate,
                                                              @RequestParam(required = false) Integer price,
@@ -58,7 +60,13 @@ public class ProductQueryController {
         //#2. invoke service
         List<MobileHandSet> mobileHandSets = productSearchService.search(searchCriteria);
 
+        SearchResponse response=  SearchResponse.builder()
+                .message(null != mobileHandSets && mobileHandSets.size()>0 ? null : "No data found the provided search criteria.")
+                .mobileHandSets(mobileHandSets)
+                .build();
+        if(null != mobileHandSets && mobileHandSets .size() >0)
+            return new ResponseEntity<>(response, HttpStatus.OK);
         //#3. prepare a response
-        return new ResponseEntity<>(mobileHandSets, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }
