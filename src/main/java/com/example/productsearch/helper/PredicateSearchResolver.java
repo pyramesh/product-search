@@ -58,15 +58,15 @@ public class PredicateSearchResolver {
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getResolution()) {
-            predicate= h -> null != h && h.getResolution().contentEquals(searchHandSetCriteria.getResolution());
+            predicate= h -> null != h && h.getResolution().contains(searchHandSetCriteria.getResolution());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getPicture()) {
-            predicate= h -> null != h && h.getPicture().contentEquals(searchHandSetCriteria.getPicture());
+            predicate= h -> null != h && h.getPicture().contains(searchHandSetCriteria.getPicture());
             predicates.add(predicate);
         }
         if (null != searchHandSetCriteria.getId()) {
-            predicate= h -> null != h && h.getId() == searchHandSetCriteria.getId();
+            predicate= h -> null != h && h.getId().equals(searchHandSetCriteria.getId());
             predicates.add(predicate);
         }
         log.info("end PredicateSearchResolver :: resolve  with predicates ={}",predicates);
