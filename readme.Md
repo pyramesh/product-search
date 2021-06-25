@@ -1,11 +1,17 @@
 Technologies used
 -------------------------
 Java 11
+
 Spring Boot 2.4.7.
+
 lombok
+
 SLF4J
+
 Swagger API Documentation
+
 Feign Client
+
 Junit
 
 Design Documents
