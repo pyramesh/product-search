@@ -11,7 +11,11 @@ Junit
 Design Documents
 ---------------------------------
 Architecture diagram: product-search/product search-architecture.png
+
+[What is this](product-search-architecture.png)
+
 Sequence diagram : product-search/product search-sequence.png
+[What is this](product-search-sequence.png)
 
 Application
 ---------------------------
