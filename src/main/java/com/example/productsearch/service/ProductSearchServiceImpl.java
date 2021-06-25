@@ -44,13 +44,12 @@ public class ProductSearchServiceImpl  implements ProductSearchService{
                     .filter(predicates.stream()
                             .reduce(x -> true, Predicate::and))
                     .collect(Collectors.toList());
-
         }catch (Exception exp){
             log.error("exception occurred while searching product  error ={}", exp);
             throw new ProductSearchException("something went wrong. Please try again.");
         }
         log.info("filtered response Size={}", filteredList.size());
-        log.info("filtered response ={}", filteredList);
+        log.debug("filtered response ={}", filteredList);
         log.info("end :: ProductSearchServiceImpl : search with response ={} ", filteredList.size());
          return  filteredList;
     }

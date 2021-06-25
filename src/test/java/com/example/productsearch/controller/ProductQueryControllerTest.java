@@ -1,4 +1,4 @@
-package com.example.productsearch;
+package com.example.productsearch.controller;
 
 import com.example.productsearch.dto.MobileHandSet;
 import com.example.productsearch.dto.SearchResponse;

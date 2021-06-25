@@ -21,7 +21,7 @@ public class ExternalServiceFacade {
 
     @PostConstruct
     public List<MobileHandSet> loadServiceResponseStaticData(){
-        return productSearchFeignClient.fetchMobileHandset();
+        return productSearchFeignClient.fetchMobileHandsetData();
     }
 
 }

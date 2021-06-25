@@ -21,5 +21,5 @@ public interface ProductSearchFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/v3/b755c334-9627-4b09-84f2-548cb1918184",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    List<MobileHandSet> fetchMobileHandset();
+    List<MobileHandSet> fetchMobileHandsetData();
 }
