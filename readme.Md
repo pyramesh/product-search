@@ -12,11 +12,11 @@ Design Documents
 ---------------------------------
 Architecture diagram: product-search/product search-architecture.png
 
-(https://github.com/pyramesh/product-search/blob/master/product-search-architecture.png)
+![alt text](https://github.com/pyramesh/product-search/blob/master/product-search-architecture.png)
 
 Sequence diagram : product-search/product search-sequence.png
 
-(https://github.com/pyramesh/product-search/blob/master/product-search-sequence.png)
+![alt text](https://github.com/pyramesh/product-search/blob/master/product-search-sequence.png)
 
 Application
 ---------------------------
