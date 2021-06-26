@@ -130,7 +130,8 @@ How to test the application
             }
         }
     ]
-}```
+}
+```
 
 2. 1. Search products by sim:
     http://localhost:8088/product-search/mobile/search?sim=eSim
@@ -629,4 +630,5 @@ http://localhost:8088/product-search/mobile/search?priceEur=200
             }
         }
     ]
-}```
+}
+```
