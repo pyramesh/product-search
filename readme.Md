@@ -633,7 +633,7 @@ http://localhost:8088/product-search/mobile/search?priceEur=200
 }
 ```
 
-4. when criteria matches 
+4. when no criteria matches 
 http://localhost:8088/product-search/mobile/search?announceDate=2022
 
 **Response:**
