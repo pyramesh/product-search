@@ -632,3 +632,14 @@ http://localhost:8088/product-search/mobile/search?priceEur=200
     ]
 }
 ```
+
+4. when criteria matches 
+http://localhost:8088/product-search/mobile/search?announceDate=2022
+
+**Response:**
+```json
+{
+    "message": "No data found the provided search criteria.",
+    "mobileHandSets": []
+}
+```
