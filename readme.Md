@@ -90,7 +90,8 @@ How to test the application
     
     http://localhost:8088/product-search/mobile/search?announceDate=1999&price=200
     
-    Result:
+    **Response:**
+    ```json
     {
     "message": null,
     "mobileHandSets": [
@@ -129,11 +130,13 @@ How to test the application
             }
         }
     ]
-}
+}```
 
 2. 1. Search products by sim:
     http://localhost:8088/product-search/mobile/search?sim=eSim
-    Result:
+    
+    **Response:**
+        ```json
     {
     "message": null,
     "mobileHandSets": [
@@ -444,11 +447,13 @@ How to test the application
             }
         }
     ]
-}
+}```
 
 3. Search  products by priceEur
 http://localhost:8088/product-search/mobile/search?priceEur=200
-{
+
+**Response:**
+```json{
     "message": null,
     "mobileHandSets": [
         {
@@ -622,4 +627,4 @@ http://localhost:8088/product-search/mobile/search?priceEur=200
             }
         }
     ]
-}
+}```
