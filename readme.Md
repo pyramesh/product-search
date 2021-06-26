@@ -136,7 +136,8 @@ How to test the application
     http://localhost:8088/product-search/mobile/search?sim=eSim
     
     **Response:**
-        ```json
+    
+ ```json
     {
     "message": null,
     "mobileHandSets": [
@@ -447,7 +448,8 @@ How to test the application
             }
         }
     ]
-}```
+} 
+```
 
 3. Search  products by priceEur
 http://localhost:8088/product-search/mobile/search?priceEur=200
